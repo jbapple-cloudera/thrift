@@ -68,7 +68,7 @@ public:
 
   int32_t get_key() const { return key_; }
 
-  enum e_req { T_REQUIRED, T_OPTIONAL, T_OPT_IN_REQ_OUT };
+  enum e_req { T_REQUIRED = 0u, T_OPTIONAL, T_OPT_IN_REQ_OUT = ~0u };
 
   void set_req(e_req req) { req_ = req; }
 
