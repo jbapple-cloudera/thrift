@@ -42,6 +42,9 @@ env:
     - BUILD_LIBS="CPP C_GLIB HASKELL JAVA PYTHON TESTING TUTORIALS"  # only meaningful for CMake builds
 
   matrix:
+    - TEST_NAME="UBSan"
+      SCRIPT="ubsan.sh"
+
     - TEST_NAME="Cross Language Tests (Binary, Header, Multiplexed Protocols)"
       SCRIPT="cross-test.sh"
       BUILD_ARG="-'(binary|header|multiplexed)'"

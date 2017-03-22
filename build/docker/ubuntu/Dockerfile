@@ -10,7 +10,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Apache Thrift Docker build environment for Centos
+# Apache Thrift Docker build environment for Ubuntu
 #
 # Known missing client libraries:
 #  - None
@@ -141,6 +141,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 `# CSharp dependencies` \
       libmono-system-web2.0-cil \
       mono-devel
+
+# UBSan
+RUN apt-get update && apt-get install -y --no-install-recommends clang-3.8
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 `# D dependencies` \
