@@ -5,9 +5,6 @@ set -ex
 #sudo apt-get update
 sudo apt-get install -y --no-install-recommends clang-3.8 llvm-3.8-dev
 
-whereis clang
-clang --version
-
 CC=clang-3.8
 export CC
 
