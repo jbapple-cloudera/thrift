@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -x
+
 sudo apt-get update
 sudo apt-get install -y clang-3.8
 
@@ -17,7 +19,7 @@ ln -s "$(whereis llvm-symbolizer-3.8)" "${CLANG_PATH}/llvm-symbolizer"
 PATH="${CLANG_PATH}:${PATH}"
 export PATH
 
-./autotools.sh \
+build/docker/scripts/autotools.sh \
   CFLAGS="-fsanitize=undefined -fno-sanitize-recover=undefined -fno-sanitize=vptr" \
   CXXFLAGS="-fsanitize=undefined -fno-sanitize-recover=undefined -fno-sanitize=vptr" \
   --without-haxe
