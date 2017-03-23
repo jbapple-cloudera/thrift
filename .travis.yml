@@ -42,8 +42,8 @@ env:
     - BUILD_LIBS="CPP C_GLIB HASKELL JAVA PYTHON TESTING TUTORIALS"  # only meaningful for CMake builds
 
   matrix:
-    # - TEST_NAME="UBSan"
-    #   SCRIPT="ubsan.sh"
+    - TEST_NAME="UBSan"
+      SCRIPT="ubsan.sh"
 
     - TEST_NAME="Cross Language Tests (Binary, Header, Multiplexed Protocols)"
       SCRIPT="cross-test.sh"
@@ -69,9 +69,9 @@ env:
 
     # TODO: Remove them once migrated to CMake
     # Autotools builds
-    - TEST_NAME="C C++ C# D Erlang Haxe Go (automake)"
-      SCRIPT="autotools.sh"
-      BUILD_ARG="--without-dart --without-haskell --without-java --without-lua --without-nodejs --without-perl --without-php --without-php_extension --without-python --without-ruby"
+    # - TEST_NAME="C C++ C# D Erlang Haxe Go (automake)"
+    #   SCRIPT="autotools.sh"
+    #   BUILD_ARG="--without-dart --without-haskell --without-java --without-lua --without-nodejs --without-perl --without-php --without-php_extension --without-python --without-ruby"
 
     - TEST_NAME="C C++ - GCC (automake)"
       SCRIPT="autotools.sh"

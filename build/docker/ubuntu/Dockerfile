@@ -176,15 +176,15 @@ RUN curl -sSL https://storage.googleapis.com/golang/go1.4.3.linux-amd64.tar.gz |
 ENV PATH /usr/local/go/bin:$PATH
 
 # Haxe
-RUN mkdir -p /usr/lib/haxe && \
-    curl http://haxe.org/website-content/downloads/3.2.0/downloads/haxe-3.2.0-linux64.tar.gz | \
-    tar -C /usr/lib/haxe --strip-components=1 -xz && \
-    ln -s /usr/lib/haxe/haxe /usr/bin/haxe && \
-    ln -s /usr/lib/haxe/haxelib /usr/bin/haxelib && \
-    mkdir -p /usr/lib/haxe/lib  && \
-    chmod -R 777 /usr/lib/haxe/lib && \
-    haxelib setup /usr/lib/haxe/lib && \
-    haxelib install hxcpp
+# RUN mkdir -p /usr/lib/haxe && \
+#     curl http://haxe.org/website-content/downloads/3.2.0/downloads/haxe-3.2.0-linux64.tar.gz | \
+#     tar -C /usr/lib/haxe --strip-components=1 -xz && \
+#     ln -s /usr/lib/haxe/haxe /usr/bin/haxe && \
+#     ln -s /usr/lib/haxe/haxelib /usr/bin/haxelib && \
+#     mkdir -p /usr/lib/haxe/lib  && \
+#     chmod -R 777 /usr/lib/haxe/lib && \
+#     haxelib setup /usr/lib/haxe/lib && \
+#     haxelib install hxcpp
 
 # Node.js
 RUN curl -sSL https://www.npmjs.com/install.sh | sh
