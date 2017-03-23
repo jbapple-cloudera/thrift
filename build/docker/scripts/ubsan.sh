@@ -23,10 +23,10 @@ export PATH
 
 #  --without-haxe
 
-CFLAGS='-fsanitize=undefined -fno-sanitize-recover=undefined -fno-sanitize=vptr'
+CFLAGS='-fsanitize=undefined -fno-sanitize-recover=undefined -fno-sanitize=vptr -O0 -ggdb3'
 export CFLAGS
 
-CXXFLAGS='-fsanitize=undefined -fno-sanitize-recover=undefined -fno-sanitize=vptr'
+CXXFLAGS='-fsanitize=undefined -fno-sanitize-recover=undefined -fno-sanitize=vptr -O0 -ggdb3'
 export CXXFLAGS
 
-build/docker/scripts/autotools.sh \
+build/docker/scripts/autotools.sh
