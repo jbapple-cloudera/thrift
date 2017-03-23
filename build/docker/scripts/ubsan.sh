@@ -29,4 +29,4 @@ export CFLAGS
 CXXFLAGS='-fsanitize=undefined -fno-sanitize-recover=undefined -fno-sanitize=vptr -O0 -ggdb3'
 export CXXFLAGS
 
-build/docker/scripts/autotools.sh
+build/docker/scripts/autotools.sh $*
