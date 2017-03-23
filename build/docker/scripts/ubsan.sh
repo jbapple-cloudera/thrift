@@ -3,7 +3,7 @@
 set -ex
 
 #sudo apt-get update
-sudo apt-get install -y clang-3.8
+sudo apt-get install -y --no-install-recommends clang-3.8
 
 CC=clang-3.8
 export CC
