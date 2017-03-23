@@ -20,6 +20,6 @@ PATH="${CLANG_PATH}:${PATH}"
 export PATH
 
 build/docker/scripts/autotools.sh \
-  CFLAGS="-fsanitize=undefined -fno-sanitize-recover=undefined -fno-sanitize=vptr" \
-  CXXFLAGS="-fsanitize=undefined -fno-sanitize-recover=undefined -fno-sanitize=vptr" \
+  'CFLAGS="-fsanitize=undefined -fno-sanitize-recover=undefined -fno-sanitize=vptr"' \
+  'CXXFLAGS="-fsanitize=undefined -fno-sanitize-recover=undefined -fno-sanitize=vptr"' \
   --without-haxe
