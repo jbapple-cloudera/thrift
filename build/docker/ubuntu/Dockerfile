@@ -10,7 +10,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Apache Thrift Docker build environment for Ubuntu
+# Apache Thrift Docker build environment for Centos
 #
 # Known missing client libraries:
 #  - None
@@ -142,9 +142,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       libmono-system-web2.0-cil \
       mono-devel
 
-# UBSan
-RUN apt-get update && apt-get install -y --no-install-recommends clang-3.8
-
 RUN apt-get update && apt-get install -y --no-install-recommends \
 `# D dependencies` \
       xdg-utils \
@@ -176,15 +173,15 @@ RUN curl -sSL https://storage.googleapis.com/golang/go1.4.3.linux-amd64.tar.gz |
 ENV PATH /usr/local/go/bin:$PATH
 
 # Haxe
-# RUN mkdir -p /usr/lib/haxe && \
-#     curl http://haxe.org/website-content/downloads/3.2.0/downloads/haxe-3.2.0-linux64.tar.gz | \
-#     tar -C /usr/lib/haxe --strip-components=1 -xz && \
-#     ln -s /usr/lib/haxe/haxe /usr/bin/haxe && \
-#     ln -s /usr/lib/haxe/haxelib /usr/bin/haxelib && \
-#     mkdir -p /usr/lib/haxe/lib  && \
-#     chmod -R 777 /usr/lib/haxe/lib && \
-#     haxelib setup /usr/lib/haxe/lib && \
-#     haxelib install hxcpp
+RUN mkdir -p /usr/lib/haxe && \
+    curl http://haxe.org/website-content/downloads/3.2.0/downloads/haxe-3.2.0-linux64.tar.gz | \
+    tar -C /usr/lib/haxe --strip-components=1 -xz && \
+    ln -s /usr/lib/haxe/haxe /usr/bin/haxe && \
+    ln -s /usr/lib/haxe/haxelib /usr/bin/haxelib && \
+    mkdir -p /usr/lib/haxe/lib  && \
+    chmod -R 777 /usr/lib/haxe/lib && \
+    haxelib setup /usr/lib/haxe/lib && \
+    haxelib install hxcpp
 
 # Node.js
 RUN curl -sSL https://www.npmjs.com/install.sh | sh
