@@ -43,7 +43,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       flex \
       ninja-build \
       pkg-config \
-      clang-3.8 llvm-3.8-dev \
 `# Included in buildpack-deps` \
 `#      autoconf` \
 `#      automake` \
