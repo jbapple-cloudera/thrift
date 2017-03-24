@@ -19,5 +19,3 @@ export PATH="${CLANG_PATH}:${PATH}"
 llvm-symbolizer -version
 
 build/docker/scripts/autotools.sh $*
-
-sudo apt-get install clang
