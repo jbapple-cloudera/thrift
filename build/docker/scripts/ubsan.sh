@@ -7,7 +7,7 @@ sudo apt-get install -y --no-install-recommends clang-3.8 llvm-3.8-dev
 
 export CC=clang-3.8
 export CXX=clang++-3.8
-export CFLAGS="-fsanitize=undefined -fno-sanitize-recover=undefined -fno-sanitize=vptr -O0 -ggdb3"
+export CFLAGS="-fsanitize=undefined -O0 -ggdb3"
 export CXXFLAGS="${CFLAGS}"
 export UBSAN_OPTIONS=print_stacktrace=1
 
