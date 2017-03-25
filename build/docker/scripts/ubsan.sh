@@ -32,4 +32,13 @@ ln -s "$(whereis llvm-symbolizer-3.8  | rev | cut -d ' ' -f 1 | rev)" \
 export PATH="${CLANG_PATH}:${PATH}"
 llvm-symbolizer -version
 
-build/docker/scripts/autotools.sh $*
+# Build everything
+./bootstrap.sh
+./configure
+make -j3
+
+# Run tests only for C and C++
+build/docker/scripts/autotools.sh \
+  --without-csharp --without-java --without-erlang --without-nodejs --without-lua \
+  --without-python --without-perl --without-php --without-php_extension --without-dart \
+  --without-ruby --without-haskell --without-go --without-haxe --without-d
