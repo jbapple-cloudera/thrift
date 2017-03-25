@@ -153,9 +153,10 @@ env:
       DISTRO=debian
 
     # C and C++ undefined behavior. This wraps autotools.sh, but each binary crashes if
-    # undefined behavior occurs.
+    # undefined behavior occurs. Skips the known flaky tests.
     - TEST_NAME="UBSan"
       SCRIPT="ubsan.sh"
+      BUILD_ARG="--without-haskell --without-nodejs --without-perl --without-python"
 
 matrix:
   include:
