@@ -42,10 +42,6 @@ env:
     - BUILD_LIBS="CPP C_GLIB HASKELL JAVA PYTHON TESTING TUTORIALS"  # only meaningful for CMake builds
 
   matrix:
-    - TEST_NAME="UBSan"
-      SCRIPT="ubsan.sh"
-      BUILD_ARG="--without-haskell --without-nodejs --without-perl --without-python"
-
     - TEST_NAME="Cross Language Tests (Binary, Header, Multiplexed Protocols)"
       SCRIPT="cross-test.sh"
       BUILD_ARG="-'(binary|header|multiplexed)'"
@@ -155,6 +151,11 @@ env:
       SCRIPT="dpkg.sh"
       BUILD_ENV="-e CC=gcc -e CXX=g++"
       DISTRO=debian
+
+    # C and C++ undefined behavior. This wraps autotools.sh, but each binary crashes if
+    # undefined behavior occurs.
+    - TEST_NAME="UBSan"
+      SCRIPT="ubsan.sh"
 
 matrix:
   include:
